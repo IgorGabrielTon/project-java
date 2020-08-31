@@ -7,6 +7,7 @@ package workwithdata;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -40,6 +41,14 @@ public class WorkWithData {
        SimpleDateFormat modeloExibicao3 = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
        //modeloExibicao3.setTimeZone(TimeZone.getTimeZone("GMT")); <- Essencial 
        Date C = Date.from(Instant.parse("2020-08-30T23:00:00Z"));
+        System.out.println(modeloExibicao3.format(C));
+        
+         
+        Calendar manipulador = Calendar.getInstance();
+        manipulador.setTime(C);
+        manipulador.add(Calendar.DAY_OF_WEEK, 2);
+        C = manipulador.getTime();
+        
         System.out.println(modeloExibicao3.format(C));
     }
     
